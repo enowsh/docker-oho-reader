@@ -8,7 +8,7 @@ WORKDIR /etc/git
 
 RUN set -ex \
     && apk --update add --no-cache git \
-    && git clone -b patch-1 --single-branch https://github.com/esme518/oho-reader.git \
+    && git clone -b master --single-branch https://github.com/enowsh/oho-reader.git \
     && sed -i '/^app.listen(/{s/3001/PORT/}' /etc/git/oho-reader/dist/app.js \
     && cd oho-reader \
     && npm install \
